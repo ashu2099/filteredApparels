@@ -5,6 +5,8 @@ import {
   FILTER_RESULTS,
 } from "../actions/onlySingleActions";
 
+import { searchQueryInProductName } from "../../CONSTANTS";
+
 const initialState = {
   showLoader: false,
   listOfResults: [],
@@ -60,7 +62,12 @@ export default function OnlySingleReducer(state = initialState, action) {
           return false;
         }
 
-        if (x.productName.toLowerCase().indexOf(state.FILTERS.SEARCH) === -1) {
+        if (
+          !searchQueryInProductName(
+            x.productName.toLowerCase(),
+            state.FILTERS.SEARCH
+          )
+        ) {
           return false;
         }
 

@@ -20,7 +20,7 @@ export default function HeaderSearch() {
       return;
     } else {
       console.log("searchTerm==", searchTerm);
-      actionDispatcher(criteriaChanged("SEARCH", searchTerm));
+      actionDispatcher(criteriaChanged("SEARCH", searchTerm.toLowerCase()));
       actionDispatcher(updateFilteredResults());
     }
   }, [searchTerm]);
