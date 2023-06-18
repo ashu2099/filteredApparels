@@ -1,4 +1,3 @@
-import { APIS } from "../../CONSTANTS";
 
 export const SET_LOADER_STATE = "SET_LOADER_STATE";
 export const SET_PRODUCT_DATA = "SET_PRODUCT_DATA";
@@ -13,7 +12,7 @@ export const showLoader = (value) => {
 
 export const fetchProductData = () => {
   return (dispatch) => {
-    return fetch(APIS.PRODUCTS, {
+    return fetch('/WebProjectBuilds/FilteredApparels/apparelData.json', {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
